@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: 2019ugcs001
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+app:
+  name: Employee Management
+  version: v1
+
+server:
+  port: 8090
+  servlet:
+    context-path: /v1

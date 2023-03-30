@@ -1,0 +1,41 @@
+spring:
+  sql:
+    init:
+      mode: always
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: 2019ugcs001
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      javax:
+        persistence:
+          sharedCache:
+            mode: ENABLE_SELECTIVE
+      hibernate:
+#        cache:
+#          use_second_level_cache: true
+#          region:
+#            factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
+        generate_statistics: true
+        format_sql: true
+        connection:
+          isolation: 2  #Read committed
+
+logging:
+  level:
+#    net:
+#      sf:
+#        ehcache: debug
+    org:
+      hibernate:
+        stat: debug
+        type: trace
+server:
+  port: 8080
+#  servlet:
+#    context-path: /api/v1
